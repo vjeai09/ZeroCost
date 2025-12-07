@@ -16,16 +16,6 @@
     }
   },
   "submit": {
-    "production": {
-      "android": {
-        "serviceAccountKeyPath": "",
-        "track": "internal"
-      },
-      "ios": {
-        "appleId": "",
-        "appleTeamId": "",
-        "appleAppSpecificPassword": ""
-      }
-    }
+    "production": {}
   }
 }
