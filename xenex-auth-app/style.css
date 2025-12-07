@@ -1,0 +1,60 @@
+body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-layout {
+  min-height: 100vh;
+}
+
+.mdl-layout__header-row h3 {
+  margin: 0;
+}
+
+.mdl-card {
+  min-height: 0;
+  margin: 24px auto;
+}
+
+.mdl-card__supporting-text {
+  width: auto;
+  padding: 40px;
+}
+
+.mdl-textfield__input {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  min-width: 250px;
+}
+
+.mdl-textfield__input:focus {
+  border-color: #2196F3;
+  outline: none;
+}
+
+.mdl-button {
+  margin: 4px;
+}
+
+h5 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#quickstart-sign-in-status {
+  font-weight: 500;
+  color: #666;
+}

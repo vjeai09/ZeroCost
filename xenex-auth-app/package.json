@@ -1,0 +1,18 @@
+{
+  "name": "xenex-auth-app",
+  "version": "1.0.0",
+  "description": "Simple Firebase Authentication App for XENEX AI",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node test/auth.test.js"
+  },
+  "dependencies": {
+    "firebase": "^12.6.0"
+  },
+  "devDependencies": {
+    "vite": "^7.2.6"
+  }
+}
