@@ -33,8 +33,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "xenexai-b8806"
+        "projectId": "abb24627-1cb2-478b-b8da-3af256cb20f2"
       }
-    }
+    },
+    "owner": "svbh"
   }
 }
