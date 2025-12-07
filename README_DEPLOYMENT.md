@@ -24,7 +24,8 @@
 - **Status**: In Progress (20+ minutes)
 - **Expected**: ~30 minutes total
 - **Type**: Preview (for testing)
-- **Link**: https://expo.dev/accounts/svbh/projects/xenex-auth-mobile/builds/d74075fd-b350-490a-b38f-0eb6a9695bc9
+- **Account**: vjeai (Account ID: 5722835642367992706)
+- **Link**: https://expo.dev/accounts/vjeai/projects/xenex-auth-mobile/builds/d74075fd-b350-490a-b38f-0eb6a9695bc9
 
 ### Next: Production Builds
 Once preview is done:

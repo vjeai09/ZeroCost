@@ -154,11 +154,11 @@ Click "Submit for Review" in App Store Connect
 
 | Resource | Link |
 |----------|------|
-| EAS Dashboard | https://expo.dev/accounts/svbh/projects/xenex-auth-mobile |
+| EAS Dashboard | https://expo.dev/accounts/vjeai/projects/xenex-auth-mobile |
 | Google Play Console | https://play.google.com/console |
 | App Store Connect | https://appstoreconnect.apple.com |
 | Firebase Console | https://console.firebase.google.com/project/xenexai-b8806 |
-| Android Build Status | https://expo.dev/accounts/svbh/projects/xenex-auth-mobile/builds/d74075fd-b350-490a-b38f-0eb6a9695bc9 |
+| Android Build Status | https://expo.dev/accounts/vjeai/projects/xenex-auth-mobile/builds/d74075fd-b350-490a-b38f-0eb6a9695bc9 |
 
 ---
 
