@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "905133111716",
+    "project_id": "xenexai-b8806",
+    "storage_bucket": "xenexai-b8806.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905133111716:android:135a564b65b52a25e46931",
+        "android_client_info": {
+          "package_name": "com.xenexai.auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzlCkphMnEFZCGNcqi5jUAZXwxiOTc6Gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

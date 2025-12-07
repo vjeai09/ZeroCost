@@ -1,4 +1,4 @@
-// Firebase config for XENEX AI
+// Firebase config for XENEX AI - Mobile App
 import { initializeApp } from 'firebase/app';
 import { 
   getAuth, 
@@ -6,10 +6,9 @@ import {
   getReactNativePersistence 
 } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Multi-platform Firebase config
+// Firebase configs for all platforms
 const firebaseConfigWeb = {
   apiKey: "AIzaSyC2_9PZQdyWW1a8ZyAdw5Ubr_7xZQDWXME",
   authDomain: "xenexai-b8806.firebaseapp.com",
@@ -26,7 +25,7 @@ const firebaseConfigAndroid = {
   projectId: "xenexai-b8806",
   storageBucket: "xenexai-b8806.firebasestorage.app",
   messagingSenderId: "905133111716",
-  appId: "1:905133111716:android:6585a0cd804be124e46931"
+  appId: "1:905133111716:android:135a564b65b52a25e46931"
 };
 
 const firebaseConfigIOS = {
@@ -35,33 +34,51 @@ const firebaseConfigIOS = {
   projectId: "xenexai-b8806",
   storageBucket: "xenexai-b8806.firebasestorage.app",
   messagingSenderId: "905133111716",
-  appId: "1:905133111716:ios:53332fa8c0488b06e46931"
+  appId: "1:905133111716:ios:287f8b23c5f07926e46931"
 };
 
-let firebaseConfig;
-if (Platform.OS === 'web') {
-  firebaseConfig = firebaseConfigWeb;
-} else if (Platform.OS === 'android') {
-  firebaseConfig = firebaseConfigAndroid;
-} else if (Platform.OS === 'ios') {
-  firebaseConfig = firebaseConfigIOS;
-} else {
-  firebaseConfig = firebaseConfigWeb; // fallback
+// Detect platform safely without importing Platform at module level
+function getFirebaseConfig() {
+  try {
+    // Try to detect if we're in React Native environment
+    const RN = require('react-native');
+    if (RN.Platform) {
+      if (RN.Platform.OS === 'android') {
+        return firebaseConfigAndroid;
+      } else if (RN.Platform.OS === 'ios') {
+        return firebaseConfigIOS;
+      }
+    }
+  } catch (e) {
+    // If React Native is not available, we're on web
+  }
+  return firebaseConfigWeb;
 }
+
+const firebaseConfig = getFirebaseConfig();
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Auth with persistence for React Native
+// Initialize Auth with optional persistence for React Native
 let auth;
-if (Platform.OS === 'web') {
+try {
+  const RN = require('react-native');
+  if (RN.Platform && (RN.Platform.OS === 'ios' || RN.Platform.OS === 'android')) {
+    // Use persistence for mobile
+    auth = initializeAuth(app, {
+      persistence: getReactNativePersistence(AsyncStorage)
+    });
+  } else {
+    // Web auth without persistence
+    auth = getAuth(app);
+  }
+} catch (e) {
+  // Fallback for web
   auth = getAuth(app);
-} else {
-  auth = initializeAuth(app, {
-    persistence: getReactNativePersistence(AsyncStorage)
-  });
 }
 
 // Initialize Firestore
-export const db = getFirestore(app);
-export { auth };
+const db = getFirestore(app);
+
+export { auth, db };
